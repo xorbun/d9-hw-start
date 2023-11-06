@@ -5,7 +5,9 @@ import { useDispatch } from 'react-redux'
 
 
 
-const Job = ({ data }) => (
+const Job = ({ data }) => {
+  const dispatch=useDispatch()
+  return(
   <Row
     className="mx-0 mt-3 p-3"
     style={{ border: '1px solid #00000033', borderRadius: 4 }}
@@ -26,6 +28,7 @@ const Job = ({ data }) => (
       </a>
     </Col>
   </Row>
-)
+  )
+}
 
 export default Job
