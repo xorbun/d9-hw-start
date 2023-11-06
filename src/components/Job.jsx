@@ -13,13 +13,15 @@ const Job = ({ data }) => {
     style={{ border: '1px solid #00000033', borderRadius: 4 }}
   >
     <Col xs={3}>
-    <button onclick={()=>
+   
+          <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+          
+          <button onClick={()=>
           {
             dispatch({
               type:'add_to_favorite',
               payload:data.company_name,
-            })
-          }}><Link to={`/${data.company_name}`}>{data.company_name}</Link></button>
+            }) }}>aggiungi ai preferiti</button>
       
     </Col>
     <Col xs={9}>
