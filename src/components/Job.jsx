@@ -1,11 +1,11 @@
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col, } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 
 
-
 const Job = ({ data }) => {
+  
   const dispatch=useDispatch()
   return(
   <Row
@@ -13,13 +13,13 @@ const Job = ({ data }) => {
     style={{ border: '1px solid #00000033', borderRadius: 4 }}
   >
     <Col xs={3}>
-    <Button onclick={()=>
+    <button onclick={()=>
           {
             dispatch({
               type:'add_to_favorite',
               payload:data.company_name,
             })
-          }}><Link to={`/${data.company_name}`}>{data.company_name}</Link></Button>
+          }}><Link to={`/${data.company_name}`}>{data.company_name}</Link></button>
       
     </Col>
     <Col xs={9}>
