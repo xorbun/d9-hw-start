@@ -21,6 +21,16 @@ const mainReducer =
                 content:[...state.job.content, action.payload]
             }
         }
+        case 'delete':
+        return{
+            ...state,
+            job: {
+                ...state.job,
+                content: state.job.content.filter(
+                    (job,i)=> i!== action.payload
+                )
+            }
+        }
         default: return state
     }
 }
