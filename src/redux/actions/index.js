@@ -21,9 +21,10 @@ export const obtainjob=(query)=>
         })
         .then((job)=>
         {
+            console.log(job)
             dispatch({
                 type:get_job,
-                payload:job,
+                payload:job.data,
             })
         })
         .catch((err)=>
