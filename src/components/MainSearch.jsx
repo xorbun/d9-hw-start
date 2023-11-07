@@ -1,32 +1,26 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
+import { obtainjob } from "../redux/actions";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
   const [jobs, setJobs] = useState([]);
 
-  const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
-
   const handleChange = e => {
     setQuery(e.target.value);
   };
+const dispatch=useDispatch()
 
-  const handleSubmit = async e => {
-    e.preventDefault();
+useEffect(()=>
+ {
+    dispatch(obtainjob())
+ },[])
 
-    try {
-      const response = await fetch(baseEndpoint + query + "&limit=20");
-      if (response.ok) {
-        const { data } = await response.json();
-        setJobs(data);
-      } else {
-        alert("Error fetching results");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
 
   return (
     <Container>
