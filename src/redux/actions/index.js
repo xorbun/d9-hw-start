@@ -29,7 +29,7 @@ export const obtainjob=(query)=>
         })
         .catch((err)=>
         {
-            console.log("errore")
+            console.log(err)
         })
     }
 }

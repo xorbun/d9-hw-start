@@ -2,7 +2,7 @@ import { ListGroup } from "react-bootstrap";
 import  {useSelector}  from "react-redux";
 import {ListGroupItem} from "react-bootstrap";
 import { useDispatch } from "react-redux";
-
+import { deleter } from "../redux/actions";
 
 
 const Favorite=()=>
@@ -17,7 +17,7 @@ const Favorite=()=>
                 <button onClick={()=>
           {
             dispatch({
-              type:'delete',
+              type: deleter,
               payload:i,
             }) }}>cancella</button>
               </ListGroupItem>

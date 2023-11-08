@@ -7,16 +7,18 @@ import { useDispatch,useSelector } from "react-redux";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
- 
+
 
   const handleChange = e => {
     setQuery(e.target.value);
   };
 const dispatch=useDispatch()
 const jobsfromredux=useSelector((state)=>{
-  return state.job.content
+  return state.findjob.content
 })
+
 return (
+  
     <Container>
       <Row>
         <Col xs={10} className="mx-auto my-3">
@@ -31,6 +33,7 @@ return (
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
+          
           {jobsfromredux.map(jobData => (
             <Job key={jobData._id} data={jobData} />
           ))}

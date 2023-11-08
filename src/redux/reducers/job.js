@@ -1,4 +1,4 @@
-import { add_to_favorite, deleter,get_job} from "../actions";
+import { add_to_favorite, deleter} from "../actions";
 
 
 const initialState={
@@ -24,11 +24,7 @@ const addtofavorite=(state=initialState, action)=>
                          )
                      
                  }
-    case get_job:
-        return{
-            ...state,
-                content: action.payload,
-        }
+    
                  default: return state
 
 }
